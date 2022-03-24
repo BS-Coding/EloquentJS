@@ -64,3 +64,20 @@ function decode(string) {
     })
   return answer.join('')
 }
+
+function bouncingBall(h,  bounce,  window) {
+  let motherCount = 0;
+  
+  if( (h > 0 ) && ((bounce > 0 ) && (bounce < 1)) && (window < h) ){
+    motherCount = 1;
+    h *= bounce;
+    while(window < h){
+      motherCount += 2;
+      h *= bounce;
+    }  
+  } else {
+    return -1;
+  }
+  
+  return motherCount;
+}
