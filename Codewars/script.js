@@ -88,3 +88,21 @@ function dashatize(num) {
     .replace(/--+/g, "-")
     .replace(/(^-|-$)/g, "")
 }
+
+function solve(s) {
+  //letter's value is equal to its index
+  let values = [0, "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+  //regexp for vowels
+  let vowelRegex = /[aeiou]/g ;
+  
+  //splits into substrings 
+  let substrings = s.split(new RegExp(vowelRegex))
+  console.log(substrings)
+  
+  //replaces letters with number values
+  let answer = substrings.map(letter => letter.split("").reduce((a,b) => a+values.indexOf(b),0))
+  
+  //returns largest of array values
+  return Math.max(...answer);
+};
