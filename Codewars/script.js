@@ -130,3 +130,5 @@ function presses(phrase) {
   })
   return answer
 }
+
+console.log("Hello World!")
