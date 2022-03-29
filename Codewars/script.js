@@ -106,3 +106,27 @@ function solve(s) {
   //returns largest of array values
   return Math.max(...answer);
 };
+
+function presses(phrase) {
+  console.log(phrase)
+  let entryPhrase = phrase.toLowerCase().split("")
+  let singlePress = /[1*#adgjmptw\s]/;
+  let doublePress = /[behknqux0]/;
+  let triplePress = /[cfilrvyo]/;
+  let quadPress = /[sz234568]/;
+  let answer = 0;
+  entryPhrase.forEach( (x,i) => {
+    if(singlePress.test(x)){
+      answer += 1;
+    } else if (doublePress.test(x)){
+      answer += 2;
+    } else if (triplePress.test(x)){
+      answer += 3;
+    } else if (quadPress.test(x)){
+      answer += 4;
+    } else {
+      answer+= 3;
+    }
+  })
+  return answer
+}
