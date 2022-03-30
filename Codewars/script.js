@@ -131,4 +131,27 @@ function presses(phrase) {
   return answer
 }
 
-console.log("Hello World!")
+function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+  let answer = [0,0];
+  let newMonthSavings = savingperMonth;
+  savingperMonth = 0;
+  
+  
+  if(startPriceOld >= startPriceNew){
+    answer[1] = Math.round(startPriceOld - startPriceNew);
+    return answer;
+    
+  } else {
+    while( (startPriceOld + savingperMonth) < startPriceNew){
+      if (answer[0]%2 !== 0) {
+        percentLossByMonth += 0.5;
+      }
+      answer[0]++;
+      savingperMonth += newMonthSavings;
+      startPriceOld *= ( (100 - percentLossByMonth) /100);
+      startPriceNew *= ( (100 - percentLossByMonth) /100);
+    }
+  }
+  answer[1] = Math.round(startPriceOld + savingperMonth - startPriceNew)
+  return answer;
+}
