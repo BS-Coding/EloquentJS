@@ -155,3 +155,23 @@ function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMon
   answer[1] = Math.round(startPriceOld + savingperMonth - startPriceNew)
   return answer;
 }
+
+//Extensions of the Array practice
+Array.prototype.square = function square(){return this.map(x => x*=x)};
+
+Array.prototype.cube = function cube(){return this.map(x => x*=x*=x);};
+
+Array.prototype.average = function average(){
+  if(this === []){
+    return NaN;
+  } else {
+    let number = this.reduce((accum, current) => accum+=current ,0);
+    return number / this.length;
+  }
+};
+
+Array.prototype.sum = function sum(){return this.reduce( (accum, current) => accum+current ,0)};
+
+Array.prototype.even = function even(){return this.filter(x => (x%2 === 0))};
+
+Array.prototype.odd = function odd(){return this.filter(x => (x%2 !== 0))};

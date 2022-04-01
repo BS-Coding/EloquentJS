@@ -50,3 +50,13 @@ class Stopwatch {
 }
 
 const sw = new Stopwatch();
+
+
+Array.prototype.square = function square(){
+    let answer = this;
+    return answer.map(x => x*=x)
+} ;
+
+let arrayPrac = [1,2,3,4]
+
+arrayPrac.square();
