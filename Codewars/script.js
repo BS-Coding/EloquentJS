@@ -175,3 +175,11 @@ Array.prototype.sum = function sum(){return this.reduce( (accum, current) => acc
 Array.prototype.even = function even(){return this.filter(x => (x%2 === 0))};
 
 Array.prototype.odd = function odd(){return this.filter(x => (x%2 !== 0))};
+
+Array.prototype.add1 = function add1(){return this.map(x => (x+=1))};
+
+Array.prototype.half = function half(){return this.map(x => (x/=2))};
+
+Array.prototype.quarter = function quarter(){return this.map(x => (x/=4))};
+
+Array.prototype.logContents = function logContents(){this.forEach(x => (console.log(x)))};
