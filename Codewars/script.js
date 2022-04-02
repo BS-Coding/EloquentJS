@@ -183,3 +183,8 @@ Array.prototype.half = function half(){return this.map(x => (x/=2))};
 Array.prototype.quarter = function quarter(){return this.map(x => (x/=4))};
 
 Array.prototype.logContents = function logContents(){this.forEach(x => (console.log(x)))};
+
+function doubleInteger(i) {
+  i*=2
+  return i;
+}
