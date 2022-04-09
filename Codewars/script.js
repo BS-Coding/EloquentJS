@@ -226,3 +226,24 @@ function sortArray(array) {
   
   return evenArray;
 }
+
+function bingo(ticket, win){
+  let matches = 0;
+  
+  for(let i=0; i<ticket.length;i++){
+    let currentCode = ticket[i][1];
+    let currentStr = ticket[i][0];
+    
+    //Removes duplicates from currentStr for random test answers
+    currentStr = currentStr.split('').filter(function(value, index, self) { 
+      return self.indexOf(value) === index;
+    }).join('');
+    
+    currentStr.split('').forEach((x,i) => {
+      if(x.codePointAt(0) === currentCode){
+        matches++;
+      }
+    })
+  }
+  return matches >= win ? 'Winner!' : 'Loser!'
+}
