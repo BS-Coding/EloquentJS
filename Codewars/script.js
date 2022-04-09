@@ -198,3 +198,31 @@ function twoSum(numbers, target) {
     }
   }
 }
+
+function sortArray(array) {
+  let odds = [];
+  
+  // Creates array of even numbers with empty spaces where odds were and pushes odds to a new array
+  let evenArray = array.map((x) => {
+    if(x%2 !== 0){
+      odds.push(x)
+      return '';
+    } else {
+      return x;
+    }
+  })
+
+  // Sorts array of just odd numbers
+  odds.sort((a,b) => a-b);
+  
+  // Starts loop which replaces empty array elements with odd numbers from sorted array
+  let oddId = 0;
+  for(let i=0;i<evenArray.length;i++){
+    if(evenArray[i] === ''){
+      evenArray[i] = odds[oddId];
+      oddId++;
+    }
+  };
+  
+  return evenArray;
+}
