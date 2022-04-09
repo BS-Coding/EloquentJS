@@ -253,3 +253,25 @@ var encryptThis = text =>
     .replace(/(^\w)(\w)(\w*)(\w$)/, '$1$4$3$2')
     .replace(/^\w/, word.codePointAt(0)))
   .join(' ');
+
+  function sumDigPow(a, b) {
+    let answer = [];
+    
+    for(let i=a; i<=b; i++){
+      let sum = 0;
+      let currentNum = i.toString().split('')
+  
+      for(let index=1; index<=currentNum.length; index++){
+        if(currentNum[index-1] === 0){
+          sum += 0;
+        } else {
+          sum += Math.pow(currentNum[index-1], index)
+        }
+      }
+      if(sum === i){
+        answer.push(i)
+      }
+    }
+    
+    return answer;
+  }
