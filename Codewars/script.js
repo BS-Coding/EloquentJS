@@ -247,3 +247,9 @@ function bingo(ticket, win){
   }
   return matches >= win ? 'Winner!' : 'Loser!'
 }
+
+var encryptThis = text =>
+  text.split(' ').map(word => word
+    .replace(/(^\w)(\w)(\w*)(\w$)/, '$1$4$3$2')
+    .replace(/^\w/, word.codePointAt(0)))
+  .join(' ');
