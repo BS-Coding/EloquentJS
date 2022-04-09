@@ -275,3 +275,25 @@ var encryptThis = text =>
     
     return answer;
   }
+
+function countSmileys(arr) {
+  let smileyCount = 0;
+  let smileyFaceTwo = /([;:])([)D])/;
+  let smileyFaceThree = /([;:])([-~])([)D])/;
+  if(arr === []){return 0};
+  
+  arr.forEach( face => {
+    console.log(face)
+    if(face.length === 2){
+      if(smileyFaceTwo.test(face)){
+        smileyCount++;
+      }
+    } else if (face.length === 3){
+      if(smileyFaceThree.test(face)){
+        smileyCount++
+      }
+    }
+  });
+  
+  return smileyCount;
+}
