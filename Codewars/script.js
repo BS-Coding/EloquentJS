@@ -309,3 +309,27 @@ function isTriangle(a,b,c){
     return false;
   }
 }
+
+function longestConsec(strarr, k) {
+  //Testing for edge cases
+  if ( (strarr.length == 0) || (k > strarr.length) || (k <= 0) ) {
+    return "";
+    
+  } else {
+    // Sets container to fill with substrings
+    let combinations = [];
+    
+    // Runs loop to add substrings to combinations array
+    for(let i=0; i<strarr.length; i++){
+      combinations.push( strarr.slice( i, i+k ).join('') );
+    }
+    
+    // Splits substrings into arrays, converts arrays to lengths, and finds index of longest string
+    let splitAnswers = combinations.map(x => x.split("")).map(x => x.length);
+    let max = Math.max(...splitAnswers); // Gets biggest length value
+    let answer = splitAnswers.indexOf(max); // Find index of max value in the array
+    
+    // Returns the substring by using the index generated above
+    return combinations[answer];
+  }
+}
