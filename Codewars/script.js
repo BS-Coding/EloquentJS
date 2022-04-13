@@ -297,3 +297,15 @@ function countSmileys(arr) {
   
   return smileyCount;
 }
+
+function descendingOrder(n){
+  return parseInt( n.toString().split('').sort((a,b) => b-a).join('') );
+}
+
+function isTriangle(a,b,c){
+  if (((a+b) > c) && ((b+c) > a) && ((c+a) > b)){
+    return true;
+  } else {
+    return false;
+  }
+}
