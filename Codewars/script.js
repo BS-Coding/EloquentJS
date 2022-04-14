@@ -333,3 +333,38 @@ function longestConsec(strarr, k) {
     return combinations[answer];
   }
 }
+
+// Write a function "greet" that returns "hello world!"
+function greet(){
+  if(false){
+    console.log("The world has in its AirPods and cannot hear you...")
+  } else {
+    let greeting = ['h','e','l','l','o','w','o','r','l','d'];
+    let i = 0;
+    while(i<1024){
+      i++;
+      if(i === 1024){
+        greeting.push('!');
+        greeting.splice(5,0, ' ')
+        return greeting.join('')
+      }
+    }
+  }
+}
+
+function openOrSenior(data){
+  let answers = [];
+  
+  data.forEach((x) => {
+    let age = x[0];
+    let handicap = x[1];
+    if( (age < 55 ) || (handicap <= 7) ){
+      answers.push('Open')
+    } else {
+      answers.push('Senior')
+    }
+  });
+  
+  return answers;
+};
+
