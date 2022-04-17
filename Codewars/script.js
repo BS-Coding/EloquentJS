@@ -368,3 +368,41 @@ function openOrSenior(data){
   return answers;
 };
 
+function duplicateEncode(word){
+  return word
+    .toLowerCase() //make case insensitive
+    .split('') //split into an array
+    .map( (x, i, arr) => {
+      if(arr.indexOf(x) == arr.lastIndexOf(x)){
+        return '(' //returns ( if the current letter's index is the last instance 
+      } else {
+        return ')' //if there is a match in THE ORIGINAL STRING, returns )
+      }
+    })
+    .join(''); //returns as a string
+}
+
+var min = function(list){
+  return Math.min(...list);
+}
+
+var max = function(list){
+  return Math.max(...list);
+}
+
+function high(x){
+  let scores = '0abcdefghijklmnopqrstuvwxyz';
+  let words = x.split(' ');
+  let wordScores = [];
+  
+  words.forEach(x => {
+    let newScore = 0;
+    x.split('').forEach(y => {
+      newScore += scores.indexOf(y)
+    })
+    wordScores.push(newScore);
+  })
+  
+  let highestScore = wordScores.indexOf(Math.max(...wordScores))
+  return words[highestScore]
+}
