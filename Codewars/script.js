@@ -406,3 +406,99 @@ function high(x){
   let highestScore = wordScores.indexOf(Math.max(...wordScores))
   return words[highestScore]
 }
+
+function hoopCount (n) {
+  return (n < 10) ? "Keep at it until you get it" : "Great, now move on to tricks"
+}
+
+function removeSmallest(numbers) {
+  if(numbers === []){
+    return [];
+  } else {
+    let boring = Math.min(...numbers);
+    let index = numbers.indexOf(boring);
+    let answer = numbers.map(x => x);
+    answer.splice(index, 1);
+    return answer
+  }
+}
+
+var number = function(busStops){
+  let busRiders = 0;
+  
+  busStops.forEach(x => {
+    busRiders += x[0];
+    busRiders -= x[1];
+  })
+  
+  return busRiders;
+}
+
+function fakeBin(x){
+  return x.split('').map(x => {
+    return (Number(x) < 5) ? '0': '1';
+  }).join('')
+}
+
+var summation = function (num) {
+  let answer = 0;
+  
+  for(let i = 1; i <= num; i++){
+    answer += i
+  }
+  
+  return answer;
+}
+
+function printerError(s) {
+  let errorChars = /[nopqrstuvwxyz]/i;
+  let errors = 0;
+  
+  s.split('').forEach(x => {
+    console.log(x)
+    if(errorChars.test(x)){
+      errors++;
+    }
+  })
+  
+  return `${errors}/${s.length}`
+}
+
+function positiveSum(arr) {
+  let answer = 0;
+  
+  arr.forEach(x => {
+    if(x > 0){
+      answer += x;
+    }
+  })
+  
+  return answer;
+}
+
+function greet(language) {
+	let db = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  }
+  if(language in db){
+    return db[language];
+  } else {
+    return "Welcome"
+  }
+}
