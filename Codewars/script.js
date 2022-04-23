@@ -502,3 +502,17 @@ function greet(language) {
     return "Welcome"
   }
 }
+
+String.prototype.toAlternatingCase = function () {
+  return this.split('').map(x => {
+    if( /[A-Z]/gi.test(x) ){
+      if( x === x.toLowerCase() ){
+        return x.toUpperCase();
+      } else if( x === x.toUpperCase() ){
+        return x.toLowerCase();
+      } 
+    } else {
+      return x;
+    }
+  }).join('')
+}
