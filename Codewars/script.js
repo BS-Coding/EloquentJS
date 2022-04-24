@@ -516,3 +516,13 @@ String.prototype.toAlternatingCase = function () {
     }
   }).join('')
 }
+
+const binaryArrayToNumber = arr => {
+  let bnry = arr.join('')
+  
+  return parseInt(bnry, 2)
+};
+
+function check(a, x) {
+  return a.includes(x)
+}
