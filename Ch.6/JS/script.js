@@ -66,4 +66,9 @@ Group[Symbol.iterator] = function* (){
 }
 
 //Exercise 4
+let HOP = Symbol('hasOwnProperty')
+let ex4 = {
+    [HOP]: 'working!'
+}
 
+console.log(ex4.hasOwnProperty)
