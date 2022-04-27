@@ -580,3 +580,46 @@ function getGrade (s1, s2, s3) {
     return 'F'
   }
 }
+
+function nbYear(p0, percent, aug, p) {
+  let years = 0;
+  let total = p0;
+  let newPercent = percent/100;
+  
+  while(p > total){
+    total += Math.floor(total * newPercent);
+    total += aug;
+    console.log(total);
+    years++;
+  }
+  
+  return years;
+}
+
+function rentalCarCost(d) {
+  let total = 0;
+  
+  if(d >= 7){
+    total =- 50
+  } else if (d >= 3){
+    total =- 20
+  }
+  
+  return total += (d * 40)
+}
+
+function twoSort(s) {
+  s.sort()
+  return s[0].split('').join('***')
+}
+
+function expandedForm(num) {
+  let realLength = num.toString().length - 1;
+  let arrNum = num.toString().split('');
+  
+  let expanded = arrNum.map((x,i) => {
+    return ( x * ( 10 ** (realLength - i ) ) );
+  })
+  
+  return ( expanded.filter(x => x > 0).join(' + ') );
+}
