@@ -751,3 +751,32 @@ function digPow(n, p) {
 		return -1;
 	}
 }
+
+function domainName(url) {
+	let answer;
+
+	if (url.substring(0, 11) === 'http://www.') {
+		answer = url.split('').splice(11, url.length).join('');
+		let end = answer.split('').indexOf('.');
+		return answer.split('').splice(0, end).join('');
+	} else if (url.substring(0, 12) === 'https://www.') {
+		answer = url.split('').splice(12, url.length).join('');
+		let end = answer.split('').indexOf('.');
+		return answer.split('').splice(0, end).join('');
+	} else if (url.substring(0, 7) === 'http://') {
+		answer = url.split('').splice(7, url.length).join('');
+		let end = answer.split('').indexOf('.');
+		return answer.split('').splice(0, end).join('');
+	} else if (url.substring(0, 8) === 'https://') {
+		answer = url.split('').splice(8, url.length).join('');
+		let end = answer.split('').indexOf('.');
+		return answer.split('').splice(0, end).join('');
+	} else if (url.substring(0, 4) === 'www.') {
+		answer = url.split('').splice(4, url.length).join('');
+		let end = answer.split('').indexOf('.');
+		return answer.split('').splice(0, end).join('');
+	} else {
+		let end = url.split('').indexOf('.');
+		return url.split('').splice(0, end).join('');
+	}
+}
