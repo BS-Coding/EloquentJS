@@ -841,3 +841,20 @@ function correct(string) {
 		})
 		.join('');
 }
+function howMuchILoveYou(nbPetals) {
+	let phrases = [
+		'I love you',
+		'a little',
+		'a lot',
+		'passionately',
+		'madly',
+		'not at all',
+	];
+	nbPetals -= 1;
+
+	while (nbPetals > 5) {
+		nbPetals -= 6;
+	}
+
+	return phrases[nbPetals];
+}
