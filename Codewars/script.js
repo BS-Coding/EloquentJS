@@ -858,3 +858,12 @@ function howMuchILoveYou(nbPetals) {
 
 	return phrases[nbPetals];
 }
+function sumStr(a, b) {
+	if (a === '') {
+		a = 0;
+	}
+	if (b === '') {
+		b = 0;
+	}
+	return (Number(a) + Number(b)).toString();
+}
