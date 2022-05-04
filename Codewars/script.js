@@ -780,3 +780,31 @@ function domainName(url) {
 		return url.split('').splice(0, end).join('');
 	}
 }
+function towerBuilder(nFloors) {
+	let tower = [];
+	let largestFloor = nFloors * 2 - 1;
+
+	for (let z = 1; z <= nFloors; z++) {
+		let currentFloor = '';
+		let asterisks = z * 2 - 1;
+		let spaces = Math.floor((largestFloor - asterisks) / 2);
+
+		//add spaces before
+		for (let i = 0; i < spaces; i++) {
+			currentFloor += ' ';
+		}
+
+		//add asterisks
+		for (let i = 0; i < asterisks; i++) {
+			currentFloor += '*';
+		}
+
+		//add spaces after
+		for (let i = 0; i < spaces; i++) {
+			currentFloor += ' ';
+		}
+
+		tower.push(currentFloor);
+	}
+	return tower;
+}
