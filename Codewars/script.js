@@ -940,3 +940,28 @@ function checkExam(examKey, studentAnswers) {
 
 	return score < 0 ? 0 : score;
 }
+function primeFactors(n) {
+	const fct = factors(n);
+	const uniq = [...new Set(fct)];
+	return uniq.map((f) => {
+		return `(${f}**${fct.filter((fct) => fct === f).length})`.replace(
+			'**1',
+			''
+		);
+	}).join``;
+}
+
+function factors(n) {
+	let max = Math.floor(Math.sqrt(n));
+	let res = [];
+	for (let i = 2; i <= max; ++i) {
+		if (n % i === 0) {
+			res.push(i);
+			n /= i;
+			max = Math.floor(Math.sqrt(n));
+			i = (Math.min(...res) || 2) - 1;
+		}
+	}
+	res.push(n);
+	return res;
+}
