@@ -927,3 +927,16 @@ const sequenceSum = (begin, end, step) => {
 	}
 	return answer;
 };
+function checkExam(examKey, studentAnswers) {
+	let score = 0;
+
+	studentAnswers.forEach((x, i) => {
+		return x === ''
+			? (score += 0)
+			: x === examKey[i]
+			? (score += 4)
+			: (score += -1);
+	});
+
+	return score < 0 ? 0 : score;
+}
