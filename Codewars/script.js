@@ -900,3 +900,30 @@ async function handleWeatherSubmit(zip) {
 
 	return weatherData;
 }
+function doubleChar(str) {
+	return str
+		.split('')
+		.map((x) => x + x)
+		.join('');
+}
+const arr = (N) => {
+	let answer = [];
+	for (let i = 0; i < N; i++) {
+		answer.push(i);
+	}
+	return answer;
+};
+function saleHotdogs(n) {
+	return n < 5 ? n * 100 : n < 10 ? n * 95 : n * 90;
+}
+const sequenceSum = (begin, end, step) => {
+	let answer = 0;
+	if (begin > end) {
+		return answer;
+	} else {
+		for (let i = begin; i <= end; i += step) {
+			answer += i;
+		}
+	}
+	return answer;
+};
