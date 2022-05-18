@@ -965,3 +965,45 @@ function factors(n) {
 	res.push(n);
 	return res;
 }
+
+function titleCase(title, minorWords) {
+	// Edge cases
+	if (title === '' || title === null || typeof title !== 'string') {
+		return '';
+	}
+
+	// Convert title and exception list to lower case and split words into an array
+	let lowTitleArr = title.toLowerCase().split(' ');
+	let exceptions = [];
+	if (minorWords !== undefined) {
+		exceptions = minorWords.toLowerCase().split(' ');
+	}
+
+	// Main algorithm
+	let titleCaseTitle = lowTitleArr.map((x, i) => {
+		// Always capitalize first letter
+		if (i === 0) {
+			//Splits words into array, and capitalizes letter at 0th position
+			return x
+				.split('')
+				.map((x, i) => {
+					return i === 0 ? x.toUpperCase() : x;
+				})
+				.join('');
+		} else {
+			//All other words
+			if (exceptions.includes(x)) {
+				return x; // Avoids words on exception list
+			} else {
+				return x
+					.split('')
+					.map((x, i) => {
+						return i === 0 ? x.toUpperCase() : x;
+					})
+					.join('');
+			}
+		}
+	});
+
+	return titleCaseTitle.join(' ');
+}
