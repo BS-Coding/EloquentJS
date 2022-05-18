@@ -1012,3 +1012,13 @@ function gooseFilter(birds) {
 
 	return birds.filter((x) => !geese.includes(x));
 }
+function testEven(n) {
+	return n % 2 === 0;
+}
+function problem(x) {
+	if (typeof x === 'string') {
+		return 'Error';
+	} else {
+		return x * 50 + 6;
+	}
+}
