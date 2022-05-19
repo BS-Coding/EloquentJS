@@ -1022,3 +1022,33 @@ function problem(x) {
 		return x * 50 + 6;
 	}
 }
+function stockList(listOfArt, listOfCat) {
+	//Edge Cases
+	if (listOfArt.length === 0) {
+		return '';
+	}
+	if (listOfCat.length === 0) {
+		return '';
+	}
+
+	//Main Alg
+	let answers = [];
+
+	listOfCat.forEach((letter) => {
+		let number = 0;
+
+		listOfArt.forEach((book) => {
+			let set = book.split(' ');
+			let bookNumber = Number(set[1]);
+			let firstLetter = set[0].split('')[0];
+
+			if (firstLetter === letter) {
+				number += bookNumber;
+			}
+		});
+
+		answers.push(`(${letter} : ${number})`);
+	});
+
+	return answers.join(' - ');
+}
