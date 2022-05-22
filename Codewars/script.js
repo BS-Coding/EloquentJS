@@ -1052,3 +1052,6 @@ function stockList(listOfArt, listOfCat) {
 
 	return answers.join(' - ');
 }
+function solution(str, ending) {
+	return str.endsWith(ending);
+}
