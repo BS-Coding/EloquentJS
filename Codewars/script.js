@@ -1086,3 +1086,6 @@ function persistence(num) {
 		return counter;
 	}
 }
+function xor(a, b) {
+	return a === b ? false : true;
+}
