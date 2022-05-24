@@ -1089,3 +1089,56 @@ function persistence(num) {
 function xor(a, b) {
 	return a === b ? false : true;
 }
+var isAnagram = function (test, original) {
+	let word1 = test.toLowerCase().split('').sort().join('');
+	let word2 = original.toLowerCase().split('').sort().join('');
+
+	return word1 === word2 ? true : false;
+};
+function findUniq(arr) {
+	let unique;
+
+	arr.forEach((x, i, arr) => {
+		if (arr.indexOf(x) !== arr.lastIndexOf(x)) {
+			return;
+		} else {
+			unique = x;
+		}
+	});
+
+	return unique;
+}
+function revrot(str, sz) {
+	//Edge cases
+	if (str === '' || sz <= 0 || sz > str.length) {
+		return '';
+	}
+
+	//Break str into sz-sized chunks
+	let chunks = [];
+	while (str.length >= sz) {
+		chunks.push(str.substring(0, sz));
+		str = str.substring(sz, str.length);
+	}
+
+	//Convoluted test on substrings
+	let modChunks = chunks.map((x) => {
+		let total = x
+			.split('')
+			.map((x) => parseInt(x))
+			.reduce((acc, curr) => acc + curr ** 3, 0);
+
+		if (total % 2 === 0) {
+			return x.split('').reverse().join('');
+		} else {
+			let lll = x.split('');
+			let num = lll[0];
+			lll.shift();
+			lll.push(num);
+
+			return lll.join('');
+		}
+	});
+
+	return modChunks.join('');
+}
