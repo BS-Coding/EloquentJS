@@ -1055,3 +1055,34 @@ function stockList(listOfArt, listOfCat) {
 function solution(str, ending) {
 	return str.endsWith(ending);
 }
+
+function persistence(num) {
+	//Gets initial array from input
+	let numArr = num
+		.toString()
+		.split('')
+		.map((x) => parseInt(x));
+
+	//Edge cases
+	if (numArr.length === 1) {
+		return 0;
+	} else {
+		//Variables for loop
+		let counter = 0;
+		let reducedArr;
+
+		//Loop Alg
+		while (numArr.length > 1) {
+			counter++;
+			//Reduces current array to a new number, stored in reducedArr
+			reducedArr = numArr.reduce((accum, curr) => accum * curr);
+			//Sets numArr to new value after new number is split into a new array
+			numArr = reducedArr
+				.toString()
+				.split('')
+				.map((x) => parseInt(x));
+		}
+
+		return counter;
+	}
+}
