@@ -1222,3 +1222,25 @@ function isValidWalk(walk) {
 		return location[0] === 0 && location[1] === 0 ? true : false;
 	}
 }
+function transpose(matrix) {
+	let transposed = [];
+	let rows = matrix[0].length;
+	let rowLength = matrix.length;
+
+	for (let i = 0; i < rows; i++) {
+		let newRow = [];
+
+		matrix.forEach((x, ind, arr) => {
+			newRow.push(x[i]);
+		});
+
+		transposed.push(newRow);
+	}
+
+	return transposed;
+}
+const bijectiveBinary = {
+	convertToInt: (s) => parseInt('1' + [...s].map((x) => +x - 1).join``, 2) - 1,
+	convertFromInt: (int) =>
+		[...(1 + int).toString(2).slice(1)].map((x) => +x + 1).join``,
+};
