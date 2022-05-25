@@ -1142,3 +1142,83 @@ function revrot(str, sz) {
 
 	return modChunks.join('');
 }
+function sumDigNthTerm(initval, patternl, nthterm) {
+	let current = 0;
+	for (let i = 1; i < nthterm; i++) {
+		initval += patternl[current];
+
+		if (current === patternl.length - 1) {
+			current = 0;
+		} else {
+			current++;
+		}
+	}
+
+	return initval
+		.toString()
+		.split('')
+		.map((x) => parseInt(x))
+		.reduce((acc, curr) => acc + curr);
+}
+
+function incrementString(strng) {
+	let arr = strng.split('');
+	let finalEl = arr[arr.length - 1];
+
+	if (finalEl === undefined) {
+		return '1';
+	}
+
+	//Handles strings with no digits
+	if (finalEl.match(/[A-Z]/gi)) {
+		arr.push('1');
+		return arr.join('');
+	} else {
+		//find last number in array
+		let ind = [];
+		arr.forEach((x, i) => {
+			if (!x.match(/[a-z]/gi)) {
+				ind.push(i);
+			}
+		});
+		//Split into two arrays of numbers and letters
+		let numberSlice = arr.splice(ind[0]);
+		let letterSlice = arr.splice(0, ind[0]);
+		let length = ind.length;
+
+		//Get value of numberSlice and replace it in the array
+		let value = parseInt(numberSlice.join(''));
+		value++;
+		let strVal = value.toString();
+		let length2 = strVal.length;
+		numberSlice.splice(-length2, length2, strVal);
+
+		return letterSlice.join('') + numberSlice.join('');
+	}
+}
+function isValidWalk(walk) {
+	console.log(walk);
+
+	if (walk.length !== 10) {
+		return false;
+	} else {
+		//sets grid location
+		let location = [0, 0];
+
+		//moves each location based on input
+		walk.forEach((dir) => {
+			if (dir === 'n') {
+				location[0]++;
+			} else if (dir === 's') {
+				location[0]--;
+			} else if (dir === 'e') {
+				location[1]++;
+			} else if (dir === 'w') {
+				location[1]--;
+			}
+		});
+
+		//checks to see if we are in the original location
+		return location[0] === 0 && location[1] === 0 ? true : false;
+	}
+}
