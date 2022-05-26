@@ -1283,3 +1283,19 @@ function findSum(n) {
 
 	return sum;
 }
+function validate(password) {
+	console.log(password);
+	if (password.length < 6) {
+		return false;
+	} else if (!password.match(/[a-z]/g)) {
+		return false;
+	} else if (!password.match(/[A-Z]/g)) {
+		return false;
+	} else if (!password.match(/\d/g)) {
+		return false;
+	} else if (password.match(/\W|_/g)) {
+		return false;
+	} else {
+		return true;
+	}
+}
