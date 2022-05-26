@@ -1251,3 +1251,35 @@ function maxBall(v0) {
 		secondsToTenths = 10;
 	return Math.round((secondsToTenths * v0) / mpsToKph / g);
 }
+function runLengthEncoding(str) {
+	var arr = [],
+		counter = 1;
+
+	for (var i = 0; i < str.length; i++) {
+		if (str[i] === str[i + 1]) {
+			counter++;
+		} else {
+			arr.push([counter, str[i]]);
+			counter = 1;
+		}
+	}
+
+	return arr;
+}
+function gimme(triplet) {
+	let sorted = triplet.map((x) => x).sort((a, b) => a - b);
+	let middle = sorted[1];
+
+	return triplet.indexOf(middle);
+}
+function findSum(n) {
+	let sum = 0;
+
+	for (let i = 1; i <= n; i++) {
+		if (i % 3 === 0 || i % 5 === 0) {
+			sum += i;
+		}
+	}
+
+	return sum;
+}
