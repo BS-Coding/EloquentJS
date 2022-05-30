@@ -1299,3 +1299,7 @@ function validate(password) {
 		return true;
 	}
 }
+
+function swap(arr){
+   return arr.reverse();
+}
