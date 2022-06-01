@@ -9,3 +9,7 @@ function hello($name = ''): string {
   //Returns string
   return "Hello, $lcName!";
 }
+
+function otherAngle($a, $b) {
+  return 180 - $a - $b;
+}

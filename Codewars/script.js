@@ -1300,6 +1300,6 @@ function validate(password) {
 	}
 }
 
-function swap(arr){
-   return arr.reverse();
+function swap(arr) {
+	return arr.reverse();
 }
