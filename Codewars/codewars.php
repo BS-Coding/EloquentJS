@@ -79,3 +79,32 @@ function removeEveryOther($array) {
   }
   return $array;
 }
+
+function apple($x) {
+  return ($x ** 2) > 1000 ? 'It\'s hotter than the sun!!' : 'Help yourself to a honeycomb Yorkie for the glovebox.';
+}
+
+function findDifference($a, $b) {
+  return abs( array_product($a) - array_product($b) );
+}
+
+function expressionMatter($a, $b, $c) {
+  return max([
+      $a+$b+$c,
+      ($a+$b)*$c,
+      $a*($b+$c),
+      $a+$b*$c,
+      $a*$b+$c,
+      $a*$b*$c
+  ]);
+}
+function sortArr($nums) {
+  if( $nums === null ){
+    return [];
+  } elseif( $nums === [] ){
+    return [];
+  }else {
+    sort($nums);
+    return $nums;
+  }
+}
