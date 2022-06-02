@@ -47,3 +47,21 @@ function DNA_strand($dna) { // equals 'TTAG'
   
   return implode('', $side2); //[A,B,C] => 'ABC'
 }
+
+function solution($s, $n) {
+  return str_repeat($s, intval($n));
+}
+
+function replaceAll($string) {
+  $split = explode('#', $string);//explode( (char to split at), (string to split) )
+  
+  return $split[0];
+}
+
+function checkForFactor($base, $factor) {
+  return ($base % $factor) == 0 ? true : false;
+}
+
+function twoDecimalPlaces($n) {
+  return round($n, 2);
+}
