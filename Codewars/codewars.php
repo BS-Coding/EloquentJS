@@ -28,3 +28,22 @@ function replace(string $s): string {
   */
   return str_replace($vowels, '!', $s);
 }
+
+function DNA_strand($dna) { // equals 'TTAG'
+  $side2 = [];
+  $dnaArray = str_split($dna); // equals [T,T,A,G]
+  
+  foreach($dnaArray as $base){
+    if($base == 'T'){
+      array_push($side2, 'A');
+    } elseif ($base == 'A'){
+      array_push($side2, 'T');
+    } elseif ($base == 'C'){
+      array_push($side2, 'G');
+    } elseif ($base == 'G'){
+      array_push($side2, 'C');
+    }
+  }
+  
+  return implode('', $side2); //[A,B,C] => 'ABC'
+}
