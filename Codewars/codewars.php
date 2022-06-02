@@ -65,3 +65,17 @@ function checkForFactor($base, $factor) {
 function twoDecimalPlaces($n) {
   return round($n, 2);
 }
+
+function removeEveryOther($array) {
+  //Iterates over array, grabbing index and word
+  foreach($array as $i => $w){
+    
+    //Test for even or odd
+    if($i%2 !== 0){
+      
+      //If odd, it is removed from $array
+      unset($array[$i]);
+    }
+  }
+  return $array;
+}
