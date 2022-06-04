@@ -113,3 +113,15 @@ function longest($a, $b) {
   sort($chars);
   return implode('', $chars);
 }
+function reverse($string) {
+  //Split string into array
+  $strArr = explode(" ", $string);
+  //Reverse array
+  $revArr = array_reverse($strArr);
+  //Join string
+  return implode(' ', $revArr);
+}
+function remove(string $s): string {
+  // rtrim( (String), (char to trim from the end))
+  return rtrim($s, "!");
+}
