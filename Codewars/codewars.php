@@ -125,3 +125,10 @@ function remove(string $s): string {
   // rtrim( (String), (char to trim from the end))
   return rtrim($s, "!");
 }
+function f($n=0) {
+  if($n > 0 && gettype($n) === 'integer'){
+    return array_sum(range(1, $n));
+  } else {
+    return false;
+  }
+}
