@@ -141,3 +141,6 @@ function series_sum($n) {
   
   return number_format($sum, 2, '.', '');
 }
+function array_double($x){
+  return 2 * array_sum($x);
+}
