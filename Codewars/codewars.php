@@ -144,3 +144,10 @@ function series_sum($n) {
 function array_double($x){
   return 2 * array_sum($x);
 }
+function stringCap($string){
+  if($string == NULL || $string == ''){
+    return "Invalid string.";
+  } else {
+    return ucfirst($string);
+  }
+}
