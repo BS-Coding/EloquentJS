@@ -162,3 +162,21 @@ function people_with_age_drink(int $old): string {
     return 'drink whisky';
   }
 }
+function isVow(array $a){
+  for($x=0; $x<count($a); $x++){
+    $charVal = chr($a[$x]);
+    if($charVal === "a" || $charVal === "e" || $charVal === "i" || $charVal === "o" || $charVal === "u"){
+      $a[$x] = $charVal;
+    }
+  }
+  return $a;
+}
+function sumCubes($n) {
+  $range = range(1, $n);
+  
+  foreach($range as &$num){
+    $num = $num ** 3;
+  }
+  
+  return array_sum($range);
+}
