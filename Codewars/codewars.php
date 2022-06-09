@@ -180,3 +180,7 @@ function sumCubes($n) {
   
   return array_sum($range);
 }
+function pillars($numberOfPillars, $dist, $width)
+{
+  return max(0, ($numberOfPillars-1)*($dist*100+$width)-$width);
+}
