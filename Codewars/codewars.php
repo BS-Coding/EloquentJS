@@ -184,3 +184,17 @@ function pillars($numberOfPillars, $dist, $width)
 {
   return max(0, ($numberOfPillars-1)*($dist*100+$width)-$width);
 }
+
+function movie($card, $ticket, $perc) {
+  $count = 0;
+  $sys_a_price = 0;
+  $sys_b_price = $card;
+  
+  while( ceil($sys_b_price) >= $sys_a_price ){
+    $count++;
+    $sys_a_price += $ticket;
+    $sys_b_price += ($ticket * ($perc**$count));
+  }
+  
+  return $count;
+}
