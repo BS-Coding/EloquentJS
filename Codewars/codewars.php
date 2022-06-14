@@ -213,3 +213,20 @@ function fold_to($distance) {
     return $folds;
   }
 }
+function capitalize($s) {
+  $even = [];
+  $odd = [];
+  $str_arr = str_split($s);
+  
+  foreach($str_arr as $ind=>$letter){
+    if($ind%2 === 0){
+      array_push($even, strtoupper($letter));
+      array_push($odd, strtolower($letter));
+    } else {
+      array_push($odd, strtoupper($letter));
+      array_push($even, strtolower($letter));
+    }
+  }
+  
+  return [implode('', $even), implode('', $odd)];
+}
