@@ -198,3 +198,18 @@ function movie($card, $ticket, $perc) {
   
   return $count;
 }
+function fold_to($distance) {
+  if($distance < 0){
+    return null;
+  } else {
+    $folds = 0;
+    $current_stack = 0.0001;
+    
+    while($current_stack < $distance){
+      $folds++;
+      $current_stack *= 2;
+    }
+    
+    return $folds;
+  }
+}
