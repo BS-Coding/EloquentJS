@@ -241,3 +241,25 @@ function finalGrade($exam, $projects) {
     return 0;
   }
 }
+function greet($name) {
+  $formatted_name = ucfirst( strtolower($name));
+  return "Hello {$formatted_name}!";
+}
+function dnaToRna($str) {
+  return str_replace("T", "U", $str);
+}
+function fuel_price($litres, $price_per_litre) {
+  if($litres < 2){
+    return $litres * $price_per_litre;
+  } elseif ($litres < 4){
+    return $litres * ($price_per_litre - 0.05);
+  } elseif ($litres < 6){
+    return $litres * ($price_per_litre - 0.10);
+  } elseif ($litres < 8){
+    return $litres * ($price_per_litre - 0.15);
+  } elseif ($litres < 10){
+    return $litres * ($price_per_litre - 0.20);
+  } else {
+    return $litres * ($price_per_litre - 0.25);
+  }
+}
