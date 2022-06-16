@@ -263,3 +263,15 @@ function fuel_price($litres, $price_per_litre) {
     return $litres * ($price_per_litre - 0.25);
   }
 }
+
+function orderedCount($text) {
+  $list = [];
+  $arr = array_count_values(str_split($text));
+  
+  foreach($arr as $letter=>$num){
+    $list[] = [$letter, $num];
+    //array_push($tuple, $list);
+  }
+  
+  return empty($text) ? [] : $list;
+}
