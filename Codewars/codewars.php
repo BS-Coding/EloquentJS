@@ -275,3 +275,13 @@ function orderedCount($text) {
   
   return empty($text) ? [] : $list;
 }
+function remainder($a, $b) {
+  if($a === 0 || $b === 0){
+    return null;
+  } else {
+    $c = max($a, $b);
+    $d = min($a, $b);
+    
+    return ($c % $d) > 0 ? ($c % $d) : null;
+  }
+}
