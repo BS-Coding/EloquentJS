@@ -297,3 +297,12 @@ function calc($s) {
   
   return array_sum(str_split($numStr)) - array_sum(str_split($numStrTwo));
 }
+function XO($s) {
+  $xoCount = array_count_values(str_split(strtolower($s)));
+  
+  if($xoCount["x"] === $xoCount["o"]){
+    return true;
+  }
+
+  return false;
+}
