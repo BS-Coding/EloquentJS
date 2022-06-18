@@ -285,3 +285,15 @@ function remainder($a, $b) {
     return ($c % $d) > 0 ? ($c % $d) : null;
   }
 }
+function calc($s) {
+  $arr = str_split($s);
+  
+  foreach($arr as &$value){
+    $value = ord($value);
+  }
+  
+  $numStr = implode('', $arr);
+  $numStrTwo = str_replace("7", "1", $numStr);
+  
+  return array_sum(str_split($numStr)) - array_sum(str_split($numStrTwo));
+}
