@@ -306,3 +306,11 @@ function XO($s) {
 
   return false;
 }
+function seven($m) {
+  $s = 0;
+  while(strlen($m) > 2) {
+    $s++;
+    $m = (int)substr($m, 0,-1) - (2*(int)substr($m, -1));
+  }
+  return [$m,$s];
+}
