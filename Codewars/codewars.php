@@ -325,3 +325,29 @@ function cube_odd($a){
   }
   return $warning == true? $sum : NULL;
 }
+function decipherThis($str){
+  $strList = explode(" ", $str);
+  
+  foreach($strList as &$word){
+    //Gets number string
+    $splitNum = preg_split("/[a-z]+$/", $word);
+    $code = chr($splitNum[0]);
+    
+    //Gets letter string
+    $splitWord = preg_split("/[\d]+/", $word);
+    $letters = $splitWord[1];
+    
+    //Saves and switches last letter and first
+    $lastLetter = $letters[strlen($letters)-1];
+    $letters[strlen($letters)-1] = $letters[0];
+    $letters[0] = $lastLetter;
+    
+    if(gettype($letters) !== 'array'){
+      $word = $code.$letters;
+    } else {
+      $word = $code;
+    }
+  }
+  
+  return implode(' ', $strList);
+}
