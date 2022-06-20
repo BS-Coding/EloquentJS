@@ -351,3 +351,24 @@ function decipherThis($str){
   
   return implode(' ', $strList);
 }
+function meeting($s) {
+  //Gets array of names in orginal format
+  $allNames = explode(';', $s);
+  
+  //Format names
+  foreach($allNames as &$name){
+    
+    //Breaks name into first and last
+    $n = explode(':', $name);
+    
+    //Uppercase for each
+    $first = strtoupper($n[0]);
+    $last = strtoupper($n[1]);
+    
+    //sets array element to prefered (LastName, FirstName) format
+    $name = "($last, $first)";
+  }
+  //Sort array alphabetically and return as string
+  sort($allNames);
+  return implode('', $allNames);
+}
