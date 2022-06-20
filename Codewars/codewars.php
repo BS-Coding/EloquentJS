@@ -314,3 +314,14 @@ function seven($m) {
   }
   return [$m,$s];
 }
+function cube_odd($a){
+  var_dump($a);
+  $sum = 0;
+  $warning = true;
+  foreach($a as &$value){
+    if(gettype($value) !== 'integer'){unset($value);$warning = false;}
+    elseif($value%2 == 0){unset($value);}
+    else{$sum += ($value**3);}
+  }
+  return $warning == true? $sum : NULL;
+}
