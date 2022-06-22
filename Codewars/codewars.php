@@ -372,3 +372,9 @@ function meeting($s) {
   sort($allNames);
   return implode('', $allNames);
 }
+function toNumberArray(array $stringArray) : array {
+  foreach($stringArray as &$value){
+    $value = floatval($value);
+  }
+  return $stringArray;
+}
