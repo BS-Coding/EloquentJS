@@ -378,3 +378,8 @@ function toNumberArray(array $stringArray) : array {
   }
   return $stringArray;
 }
+function dutyFree($normPrice, $discount, $hol) {
+  $savings = $normPrice * ($discount/100);
+  
+  return floor($hol / $savings);
+}
