@@ -383,3 +383,24 @@ function dutyFree($normPrice, $discount, $hol) {
   
   return floor($hol / $savings);
 }
+class SequenceSum {
+  public function showSequence($count) {
+    if($count < 0){
+      return "{$count}<0";
+      
+    } elseif ($count == 0){
+      return "0=0";
+      
+    } else {
+      $string = '0';
+      
+      for($x=1; $x<=$count;$x++){
+        $string = $string."+{$x}";
+      }
+      
+      $sum = array_sum(range(0,$count));
+      $string = $string." = {$sum}";
+      return $string;
+    }
+  }
+}
