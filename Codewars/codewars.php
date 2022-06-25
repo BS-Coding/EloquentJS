@@ -405,3 +405,8 @@ class SequenceSum {
   }
 }
 $o=0;
+class TextHelper {
+  public function removeHttp($string){
+    return trim($string, 'http://');
+  }
+}
