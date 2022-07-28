@@ -406,7 +406,11 @@ class SequenceSum {
 }
 $o=0;
 class TextHelper {
-  public function removeHttp($string){
+  public function removeHttp($string): string{
     return trim($string, 'http://');
+  }
+
+  public function allCaps($string): string{
+    return ucwords($string);
   }
 }
