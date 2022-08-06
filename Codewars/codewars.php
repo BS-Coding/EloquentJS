@@ -413,4 +413,8 @@ class TextHelper {
   public function allCaps($string): string{
     return ucwords($string);
   }
+
+  public function noCaps($string): string{
+    return strtolower($string);
+  }
 }
